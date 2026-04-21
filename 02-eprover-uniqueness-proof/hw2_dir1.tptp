@@ -1,0 +1,14 @@
+% hw2_dir1.tptp
+% D1: Definición expandida → existencia y unicidad
+
+fof(def_expanded, axiom,
+    ? [X] : ( p(X) & ! [Y] : ( p(Y) => ( Y = X ) ) )
+).
+
+fof(conj_existence, conjecture,
+    ? [X] : p(X)
+).
+
+fof(conj_uniqueness, conjecture,
+    ! [Y,Z] : ( ( p(Y) & p(Z) ) => ( Y = Z ) )
+).

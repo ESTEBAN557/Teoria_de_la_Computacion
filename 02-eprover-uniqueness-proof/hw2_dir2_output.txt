@@ -1,0 +1,40 @@
+% Preprocessing class: FSSSSMSSSSSNFFN.
+% Configuration: G-E--_302_C18_F1_URBAN_RG_S04BN
+% (lift_lambdas = 1, lambda_to_forall = 1,unroll_only_formulas = 1, sine = Auto)
+% No SInE strategy applied
+% Search class: FHHSF-FFSF11-SFFFFFNN
+% partial match(1): FGHSF-FFSF11-SFFFFFNN
+% Configuration: G-E--_208_C18_F1_SE_CS_SP_PS_S5PRR_S4d
+% Initializing proof state
+% Scanning for AC axioms
+%
+%cnf(i_0_1, plain, (p(esk1_0))).
+%
+%cnf(i_0_3, negated_conjecture, (esk2_1(X1)!=X1|~p(X1))).
+%
+%cnf(i_0_4, negated_conjecture, (p(esk2_1(X1))|~p(X1))).
+%
+%cnf(i_0_2, plain, (X1=X2|~p(X2)|~p(X1))).
+% Presaturation interreduction done
+%
+%cnf(i_0_1, plain, (p(esk1_0))).
+%
+%cnf(i_0_3, negated_conjecture, (esk2_1(X1)!=X1|~p(X1))).
+%
+%cnf(i_0_4, negated_conjecture, (p(esk2_1(X1))|~p(X1))).
+%
+%cnf(i_0_2, plain, (X1=X2|~p(X2)|~p(X1))).
+%
+%cnf(i_0_5, negated_conjecture, (~p(X1))).
+
+% Proof found!
+
+% -------------------------------------------------
+% Total SizeMalloc()ed memory: 70775624 Bytes (137503 requests)
+% Total SizeFree()ed   memory: 70775624 Bytes (137503 requests)
+% New requests:   1436 (  1377 by SecureMalloc(),     59 by SecureRealloc())
+% Total SecureMalloc()ed memory: 678585 Bytes
+% Returned:      1435 (  1435 by FREE(),              0 by SecureRealloc())
+% SecureRealloc(ptr):     71 (    59 Allocs,      0 Frees,     12 Reallocs)
+% -------------------------------------------------
+
