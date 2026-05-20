@@ -1,152 +1,263 @@
-# HW1 – Church Booleans
+# 🧠 HW1 — Church Booleans
 
-**Course**: SI1001 — Theory of Computation  
-**Professor**: Andrés Sicard-Ramírez  
-**Creation date**: 19th August 2025  
-**Version**: 0.1  
+## Academic Context
+
+**Course:** SI1001 — Theory of Computation  
+**Professor:** Andrés Sicard-Ramírez  
+**Institution:** EAFIT University  
+**Creation Date:** 19th August 2025  
+**Version:** 0.1
 
 ---
 
-## Team Members
+## 👥 Team Members
 
-- Joan Stiven Peralta Bedoya  
+- Joan Stiven Peralta Bedoya
 - Esteban Alvarez Garcia
 
 ---
 
-## Project Description
+# 📌 Project Description
 
-This homework implements **Church’s encoding of Booleans** in Haskell. The task was to define the λ-terms for:
+This homework implements **Church’s encoding of Boolean logic** in Haskell using pure λ-calculus representations.
 
-- `cTrue`, `cFalse`  
-- `cIf`, `cNot`, `cAnd`, `cOr`  
+The project defines the following λ-encoded Boolean operations:
 
-**Constraints**: Only λ-terms — no use of Haskell’s built-in `Bool` type, `if-then-else`, or `case` expressions.
-
----
-
-## Repository Contents
-
-- `ChurchBool.hs` — Implementation and test driver (`main = testing`).  
-- `README.md` — This file.
+- `cTrue`
+- `cFalse`
+- `cIf`
+- `cNot`
+- `cAnd`
+- `cOr`
 
 ---
 
-## Development Environment
+## Constraints
 
-We worked on two different systems:
+The implementation follows these restrictions:
 
-1. **Joan Stiven Peralta Bedoya** — Manjaro Linux  
-   - Installed GHC via [GHCup](https://www.haskell.org/ghcup/).  
-   - Commands used:
-     ```bash
-     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-     ghcup install ghc latest
-     ghcup set ghc latest
-     ```
-   - Verified with:
-     ```bash
-     ghc --version
-     ghci --version
-     ```
+- Only λ-terms are allowed
+- No use of Haskell’s built-in `Bool` type
+- No use of:
+  - `if-then-else`
+  - `case` expressions
 
-2. **Esteban Alvarez Garcia** — Windows 11  
-   - Installed **GHCup for Windows** following the official [installation guide](https://www.haskell.org/ghcup/install/).  
-   - Added `C:\ghcup\bin` to PATH (automatically done by installer).  
-   - Verified with PowerShell:
-     ```powershell
-     ghc --version
-     ghci --version
-     ```
-
-Both environments successfully compiled and executed the program with **GHC 9.12.2**.
+The goal is to simulate Boolean logic entirely through higher-order functions.
 
 ---
 
-## How to Build and Run
+# 📁 Repository Contents
 
-Compile:
+```bash
+📦 01-church-booleans
+ ┣ 📄 ChurchBool.hs
+ ┗ 📄 README.md
+```
+
+### Files
+
+| File | Description |
+|---|---|
+| `ChurchBool.hs` | Church Boolean implementation and test driver |
+| `README.md` | Project documentation |
+
+---
+
+# ⚙️ Development Environment
+
+The project was developed and tested on different operating systems.
+
+---
+
+## Joan Stiven Peralta Bedoya
+
+### Environment
+
+- Manjaro Linux
+- GHC installed through GHCup
+
+### Installation Commands
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+ghcup install ghc latest
+ghcup set ghc latest
+```
+
+### Verification
+
+```bash
+ghc --version
+ghci --version
+```
+
+---
+
+## Esteban Alvarez Garcia
+
+### Environment
+
+- Windows 11
+- GHCup for Windows
+
+### Verification (PowerShell)
+
+```powershell
+ghc --version
+ghci --version
+```
+
+Both environments successfully compiled and executed the project using:
+
+```text
+GHC 9.12.2
+```
+
+---
+
+# ▶️ Compilation and Execution
+
+## Compile
+
 ```bash
 ghc ChurchBool.hs -o hw1
+```
 
-Run:
+---
+
+## Run
+
+### Linux / WSL
+
+```bash
 ./hw1
+```
 
+### Windows PowerShell
 
-Interactive with GHCI:
+```powershell
+.\hw1.exe
+```
 
+---
+
+## Interactive Execution with GHCI
+
+```bash
 ghci ChurchBool.hs
+```
+
+Examples:
+
+```haskell
 *Main> testing
 *Main> cIf cTrue "hello" "bye"
 "hello"
+
 *Main> show (cNot cTrue)
 "cFalse"
+```
 
-Expected Output
+---
 
-cIf cTrue 42 24 = 42  
-cIf cFalse cTrue cFalse = cFalse  
-cNot cTrue = cFalse  
-cAnd cTrue cFalse = cFalse  
+# 🧪 Expected Output
+
+```text
+cIf cTrue 42 24 = 42
+cIf cFalse cTrue cFalse = cFalse
+cNot cTrue = cFalse
+cAnd cTrue cFalse = cFalse
 cOr cTrue cFalse = cTrue
 ```
 
-### Background: Church Booleans
+---
 
-Church encoding represents Boolean logic using pure λ-calculus. Each Boolean operation is defined as a higher-order function:
+# 📚 Background — Church Booleans
 
-| Concept   | λ-Calculus Definition     | Haskell Equivalent     | Behavior Description                     |
-|-----------|---------------------------|------------------------|------------------------------------------|
-| `cTrue`   | `λx.λy.x`                 | `\x y -> x`            | Selects the first argument (True)        |
-| `cFalse`  | `λx.λy.y`                 | `\x y -> y`            | Selects the second argument (False)      |
-| `cIf`     | `b x y = b x y`           | `cb x y = cb x y`      | Conditional: returns x if cb is True     |
-| `cNot`    | `b False True`            | `b cFalse cTrue`       | Logical negation                         |
-| `cAnd`    | `p q False`               | `p q cFalse`           | Logical conjunction                      |
-| `cOr`     | `p True q`                | `p cTrue q`            | Logical disjunction                      |
+Church encoding represents Boolean logic using pure λ-calculus.
 
-These functions satisfy the expected truth tables when evaluated.
+Each Boolean operation is represented as a higher-order function.
 
+---
 
-### Logical Analysis
+## λ-Calculus Definitions
 
-To validate correctness, we compare Church Boolean operations with classical logic:
+| Concept | λ-Calculus Definition | Haskell Equivalent | Description |
+|---|---|---|---|
+| `cTrue` | `λx.λy.x` | `\x y -> x` | Selects first argument |
+| `cFalse` | `λx.λy.y` | `\x y -> y` | Selects second argument |
+| `cIf` | `b x y = b x y` | `cb x y = cb x y` | Conditional evaluation |
+| `cNot` | `b False True` | `b cFalse cTrue` | Logical negation |
+| `cAnd` | `p q False` | `p q cFalse` | Logical conjunction |
+| `cOr` | `p True q` | `p cTrue q` | Logical disjunction |
 
-| Expression                  | Result    |
-|----------------------------|-----------|
-| `cIf cTrue x y`            | `x`       |
-| `cIf cFalse x y`           | `y`       |
-| `cNot cTrue`               | `cFalse`  |
-| `cNot cFalse`              | `cTrue`   |
-| `cAnd cTrue cTrue`         | `cTrue`   |
-| `cAnd cTrue cFalse`        | `cFalse`  |
-| `cAnd cFalse cTrue`        | `cFalse`  |
-| `cOr cTrue cFalse`         | `cTrue`   |
-| `cOr cFalse cFalse`        | `cFalse`  |
+These functions satisfy classical Boolean truth tables through λ-reduction.
 
-These results confirm that our λ-encoded functions behave identically to classical Boolean logic.
+---
 
-#### Supporting Material & References
+# 🔍 Logical Validation
+
+To validate correctness, the Church Boolean operations were compared against classical Boolean logic.
+
+| Expression | Result |
+|---|---|
+| `cIf cTrue x y` | `x` |
+| `cIf cFalse x y` | `y` |
+| `cNot cTrue` | `cFalse` |
+| `cNot cFalse` | `cTrue` |
+| `cAnd cTrue cTrue` | `cTrue` |
+| `cAnd cTrue cFalse` | `cFalse` |
+| `cAnd cFalse cTrue` | `cFalse` |
+| `cOr cTrue cFalse` | `cTrue` |
+| `cOr cFalse cFalse` | `cFalse` |
+
+These results confirm that the λ-encoded functions behave equivalently to classical Boolean operators.
+
+---
+
+# 🧠 Concepts Applied
+
+This project applies concepts from:
+
+- Lambda Calculus
+- Church Encoding
+- Functional Programming
+- Higher-Order Functions
+- Boolean Logic
+- Type Systems
+- β-Reduction
+- Formal Computation Models
+
+---
+
+# 📖 References
 
 - Church encoding (Wikipedia)
-- Rank-N types in Haskell (HaskellWiki)
+- Rank-N Types in Haskell (HaskellWiki)
 - GHC User’s Guide — RankNTypes
-- GHCup installer
-- Blog — Church Booleans in Haskell (and Morte!)
-- Blog — Church-encoded Boolean values (P. M. Ploeh)
-- GitHub — Haskell church encodings
-- Stack Overflow — Church booleans in STLC
+- GHCup Installer
+- Church Booleans in Haskell (and Morte!)
+- Church-encoded Boolean Values — P. M. Ploeh
+- Haskell Church Encodings (GitHub)
+- Stack Overflow — Church Booleans in STLC
 - Reddit — Church Booleans in Haskell
 
-#### Use of AI (ChatGPT)
+---
 
-We used ChatGPT (OpenAI) to:
-- Clarify λ-calculus concepts and β-reduction.
-- Explain Haskell type system (forall, Rank2Types, polymorphism).
-- Review and complete function definitions.
-- Suggest tests, desk-checks, and clean code practices.
-- Improve documentation and structure of this README.md.
+# 🤖 Use of AI (ChatGPT)
 
-#### Acknowledgements
-- Professor Andrés Sicard-Ramírez for the assignment and academic guidance.
-- Open-source community resources cited above.
-- ChatGPT (OpenAI) for explanations, guidance, and documentation support.
+ChatGPT (OpenAI) was used to:
+
+- Clarify λ-calculus concepts and β-reduction
+- Explain Haskell polymorphism and Rank-N types
+- Review and refine function definitions
+- Suggest tests and desk-checks
+- Improve documentation and README structure
+
+---
+
+# 🙏 Acknowledgements
+
+- Professor Andrés Sicard-Ramírez for the assignment and academic guidance
+- Open-source community resources referenced above
+- ChatGPT (OpenAI) for conceptual explanations and documentation support
