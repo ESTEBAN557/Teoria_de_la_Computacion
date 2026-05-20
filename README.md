@@ -1,180 +1,234 @@
-# 🧠 Theory of Computation Repository (Personal Backup & Portfolio)
+# 🧠 Theory of Computation Projects
 
-## Environment and Tools
+## Academic Context
 
-The projects in this repository were developed using multiple environments depending on the assignment:
+This repository contains projects developed for the course:
 
-* **Operating Systems:** Windows 11, WSL (Ubuntu), Manjaro Linux
-* **Languages:** C, Haskell, TPTP (First-Order Logic)
-* **Tools & Frameworks:**
+- **SI1001 — Theory of Computation**
 
-  * Frama-C (WP Plugin, RTE Analysis)
-  * E Prover (Automated Theorem Proving)
-  * ENIGMA (Machine Learning for ATP)
-  * GHC (Glasgow Haskell Compiler)
-* **Editors/IDE:** Visual Studio Code
-* **Terminal:** PowerShell / Linux Terminal
+EAFIT University — 2026
 
 ---
 
-## 📌 Repository Description
+## Environment and Tools
 
-This repository contains a **personal collection of homework assignments and projects** developed for the course:
+The projects in this repository were developed using multiple environments depending on the assignment.
 
-> **SI1001 — Theory of Computation**
+### Operating Systems
 
-⚠️ **Important Note:**
-All projects were originally developed and submitted as part of an academic organization (GitHub Classroom / EAFIT).
+- Windows 11
+- WSL (Ubuntu)
+- Manjaro Linux
+
+### Programming Languages
+
+- C
+- Haskell
+- TPTP (First-Order Logic)
+
+### Tools and Frameworks
+
+- Frama-C
+  - WP Plugin
+  - RTE Analysis
+- E Prover
+- ENIGMA
+- GHC (Glasgow Haskell Compiler)
+
+### Development Environment
+
+- Visual Studio Code
+- PowerShell
+- Linux Terminal
+
+---
+
+# 📌 Repository Description
+
+This repository contains a personal collection of assignments and projects related to:
+
+- Theory of Computation
+- Formal Logic
+- Automated Reasoning
+- Functional Programming
+- Formal Verification
+
+⚠️ **Important Note:**  
+These projects were originally developed and submitted through academic repositories (GitHub Classroom / EAFIT).
 
 This repository serves as:
 
-* 📦 A **personal backup** of all coursework
-* 💼 A **technical portfolio**
-* 📖 A structured reference for theoretical and practical concepts
+- 📦 A personal backup of coursework
+- 💼 A technical portfolio
+- 📖 A structured reference for theoretical and practical concepts
 
-It does **not claim exclusive authorship** of the work.
+It does **not claim exclusive authorship** of the projects.
 
 ---
 
 ## 👥 Authors and Contributions
 
-All assignments were developed as part of **academic group work**.
+All assignments were developed as part of academic group work.
 
-* The original authors are credited in each project folder.
-* This repository is maintained by:
+- The original authors are credited inside each project folder
+- This repository is maintained by:
 
 ```text
 Esteban Alvarez Garcia (Repository Owner)
 ```
 
-Other contributors (e.g., Joan Stiven Peralta Bedoya) are acknowledged in each project’s README.
+Other collaborators are acknowledged in their respective project READMEs.
 
 ---
 
-## 📁 Repository Structure
+# 📁 Repository Structure
 
 ```bash
-📦 theory-of-computation-repo
+📦 theory-of-computation-projects
  ┣ 📂 01-church-booleans
  ┣ 📂 02-eprover-uniqueness-proof
  ┣ 📂 03-framac-verification
- ┣ 📄 README.md
+ ┗ 📄 README.md
 ```
 
-Each folder contains:
+Each project folder includes:
 
-* Source code / formal specifications
-* Individual README
-* Theoretical explanation
-* Execution steps
-* Results and interpretation
-
----
-
-## 🚀 Projects Included
-
-### 🔹 1. Church Booleans (Haskell)
-
-* Implementation of Boolean logic using **λ-calculus (Church encoding)**
-* No use of built-in Boolean types
-* Demonstrates functional abstraction and higher-order functions
-
-📌 Key concepts:
-
-* Lambda calculus
-* Functional programming
-* Logical equivalence
+- Source code or formal specifications
+- Individual README
+- Theoretical explanation
+- Execution instructions
+- Results and interpretation
 
 ---
 
-### 🔹 2. Uniqueness and Existence Proofs (E Prover)
+# 🚀 Projects Included
 
-* Formal proof of logical equivalence using **first-order logic**
-* Implemented in **TPTP format**
-* Verified using **E Prover (ATP)**
+## 🔹 1. Church Booleans (Haskell)
 
-📌 Key concepts:
+Implementation of Boolean logic using **λ-calculus (Church encoding)** without relying on built-in Boolean types.
 
-* Automated theorem proving
-* Resolution and Skolemization
-* Logical equivalence
+### Key Concepts
 
----
-
-### 🔹 3. Formal Verification with Frama-C
-
-* Verification of a C function using **ACSL specifications**
-* Proof of correctness using **WP (Weakest Precondition)**
-* Detection of runtime errors using **RTE analysis**
-
-📌 Key concepts:
-
-* Formal verification
-* Program correctness
-* Static analysis
+- Lambda calculus
+- Functional programming
+- Higher-order functions
+- Logical equivalence
 
 ---
 
-## 🎯 Purpose of the Repository
+## 🔹 2. Uniqueness and Existence Proofs (E Prover)
 
-This repository is designed to:
+Formal proof of logical equivalence using:
 
-* 📖 Reinforce theoretical concepts through implementation
-* 🧠 Demonstrate understanding of formal methods
-* 💼 Serve as an academic and professional portfolio
+- First-order logic
+- TPTP formalization
+- Automated theorem proving
+
+The proofs were verified using **E Prover** and enhanced with **ENIGMA**.
+
+### Key Concepts
+
+- Automated theorem proving
+- Resolution
+- Skolemization
+- Logical equivalence
+- First-order logic
 
 ---
 
-## ▶️ How to Use the Repository
+## 🔹 3. Formal Verification with Frama-C
 
-Each project is independent. To use:
+Verification of a C function using:
 
-1. Navigate to a project folder:
+- ACSL specifications
+- Weakest Precondition proofs
+- Runtime error analysis
+
+The project demonstrates formal verification techniques using **Frama-C**.
+
+### Key Concepts
+
+- Formal verification
+- Static analysis
+- Program correctness
+- ACSL specifications
+- Weakest Preconditions
+
+---
+
+# 🧠 Concepts Covered
+
+This repository includes implementations and exercises related to:
+
+- Theory of Computation
+- Lambda Calculus
+- Functional Programming
+- First-Order Logic
+- Automated Reasoning
+- Formal Verification
+- Static Analysis
+- Program Correctness
+- Theorem Proving
+
+---
+
+# ▶️ How to Use the Repository
+
+Each project is independent and self-contained.
+
+## 1. Clone the repository
 
 ```bash
-cd project-folder
+git clone https://github.com/your-username/theory-of-computation-projects.git
 ```
 
-2. Follow the instructions in its README:
+---
 
-* Compilation steps
-* Execution commands
-* Tool-specific setup
+## 2. Navigate to a project folder
+
+Example:
+
+```bash
+cd 01-church-booleans
+```
 
 ---
 
-## 📌 Notes
+## 3. Follow the project README
 
-* Projects involve **different paradigms**:
-
-  * Functional (Haskell)
-  * Imperative (C)
-  * Logical (TPTP)
-* Each assignment focuses on a **different theoretical area**
-* Tools like Frama-C and E Prover require **specific installation steps** (included per project)
+Each project contains:
+- Compilation steps
+- Execution instructions
+- Tool setup
+- Examples and explanations
 
 ---
 
-## 🔮 Future Work
+# 📌 Notes
 
-Planned additions:
+- Projects involve multiple paradigms:
+  - Functional
+  - Imperative
+  - Logical
+- Each assignment focuses on a different theoretical area
+- Some tools require additional installation and configuration steps
 
-* Lambda calculus interpreters
-* Turing machines simulations
-* Complexity theory exercises
-* Advanced formal verification
+---
+
+# 🔮 Future Work
+
+Possible future additions:
+
+- Lambda calculus interpreters
+- Turing machine simulations
+- Complexity theory exercises
+- Advanced formal verification
+- SAT/SMT solving experiments
 
 ---
 
-## 📚 Conclusion
+# 📚 Conclusion
 
-This repository demonstrates the application of core concepts from **Theory of Computation**, including:
+This repository demonstrates the practical application of core concepts from **Theory of Computation** through implementations, formal proofs, and verification tools.
 
-* Lambda calculus
-* Formal logic and proofs
-* Automated reasoning
-* Program verification
-
-It combines theory with practical tools, forming a strong foundation for advanced topics in computer science.
-
----
+The projects combine theoretical foundations with practical experimentation, forming a strong basis for advanced topics in computer science, formal methods, and automated reasoning.
